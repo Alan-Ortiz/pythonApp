@@ -86,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME' : 'ormuco',
         'USER' : 'ormuco',
-        'password' : 'ormuco321',
+        'PASSWORD' : 'ormuco321',
         'HOST' : 'dbserver'
     }
 }
