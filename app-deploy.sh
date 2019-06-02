@@ -1,7 +1,10 @@
+#!/bin/sh
 cd '/app'
-export managepath=`find $(pwd) -name manage.py`
-echo $managepath
-export apppath=`find $(pwd) myapp`
-"python3 $managepath makemigrations $apppath"
-"python3 $managepath migrate $apppath"
+MP=`find $(pwd) -name manage.py`
+echo $MP
+AP=`find $(pwd) myapp`
+echo $AP
+python3 $MP makemigrations $AP
+python3 $MP migrate $AP
 nohup python3 $managepath runserver &
+exit 0
