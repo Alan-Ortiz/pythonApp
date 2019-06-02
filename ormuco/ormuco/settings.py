@@ -25,7 +25,7 @@ SECRET_KEY = '0$x3vzg@=-gfag*r!%2qtsbj#he!a*=r1g44juo4z=31@&q#ew'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -74,12 +74,23 @@ WSGI_APPLICATION = 'ormuco.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#    }
+#}
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME' : 'ormuco',
+        'USER' : 'ormuco',
+        'password' : 'ormuco321',
+        'HOST' : 'dbserver'
     }
 }
+
 
 
 # Password validation
