@@ -1,10 +1,12 @@
 #!/bin/sh
 cd '/app'
-MP=`find $(pwd) -name manage.py`
+MP=`sudo find $(pwd) -name manage.py`
 echo $MP
-AP=`find $(pwd) myapp`
+AP=`sudo find $(pwd) -name myapp`
 echo $AP
-python3 $MP makemigrations $AP
-python3 $MP migrate $AP
-nohup python3 $managepath runserver &
+echo "$(dirname -- "$AP")"
+cd $AP
+python3 $MP makemigrations myapp
+python3 $MP migrate myapp
+nohup python3 $managepath runserver && echo "finished"
 exit 0
